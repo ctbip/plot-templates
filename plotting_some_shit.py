@@ -28,7 +28,7 @@ def vtek_linear_ploting(xmin, xmax, ymin, ymax,
     ax.spines["top"].set_linewidth(1.5)
     
     ax.set_title(title,
-                fontproperties=FontProperties(family='ubuntu', style='normal', weight='heavy',                 size=13), 
+                fontproperties=FontProperties(family='ubuntu', style='normal', weight='heavy', size=13), 
                 pad=15)
     ax.set_xlabel(xlabel, fontdict={'fontsize': 10}, labelpad=0)
     ax.set_ylabel(ylabel, fontdict={'fontsize': 10}, labelpad=5)
