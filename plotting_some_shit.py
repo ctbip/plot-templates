@@ -2,7 +2,13 @@ import matplotlib.pyplot as plt
 from matplotlib.font_manager import FontProperties
 from matplotlib.ticker import AutoMinorLocator
 
-def vtek_linear_ploting(xmin, xmax, ymin, ymax, title, xlabel, ylabel, xdata, ydata, linedata, imagename):
+
+# График линейной зависимости по канонам втека
+def vtek_linear_ploting(xmin, xmax, ymin, ymax, 
+                        title, xlabel, ylabel, 
+                        xdata, ydata, linedata, 
+                        imagename):
+                        
     fig = plt.figure(figsize=[6.5,4.25], dpi=100)
     ax = fig.gca()
 
