@@ -3,12 +3,12 @@ from matplotlib.font_manager import FontProperties
 from matplotlib.ticker import AutoMinorLocator
 
 
-# График линейной зависимости по канонам втека
+# График линейной зависимости по канонам ВТЭК
 def vtek_linear_ploting(xmin, xmax, ymin, ymax, 
                         title, xlabel, ylabel, 
                         xdata, ydata, linedata, 
                         imagename):
-                        
+    """ Sample text """
     fig = plt.figure(figsize=[6.5,4.25], dpi=100)
     ax = fig.gca()
 
