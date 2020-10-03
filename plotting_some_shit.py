@@ -45,5 +45,3 @@ def vtek_linear_ploting(xmin, xmax, ymin, ymax,
 
     fig.savefig(imagename, dpi=300)
     fig.show()
-
-test test
