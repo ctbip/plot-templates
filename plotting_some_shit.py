@@ -8,7 +8,14 @@ def vtek_linear_ploting(xmin, xmax, ymin, ymax,
                         title, xlabel, ylabel, 
                         xdata, ydata, linedata, 
                         imagename):
-    """ Sample text """
+    """
+    xmin, xmax, ymin, ymax: Диапозоны графика
+    title, xlabel, ylabel: Заголовок и подписи осей
+    xdata, ydata: Экспериментальные точки
+    linedata: Данные линейной аппроксимации
+    imagename: Название сохраняемой картинки
+    """
+    
     fig = plt.figure(figsize=[6.5,4.25], dpi=100)
     ax = fig.gca()
 
@@ -26,7 +33,7 @@ def vtek_linear_ploting(xmin, xmax, ymin, ymax,
     ax.spines["right"].set_linewidth(1.5)
     ax.spines["left"].set_linewidth(1.5)
     ax.spines["top"].set_linewidth(1.5)
-    
+
     ax.set_title(title,
                 fontproperties=FontProperties(family='ubuntu', style='normal', weight='heavy', size=13), 
                 pad=15)
