@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 from matplotlib.font_manager import FontProperties
 from matplotlib.ticker import AutoMinorLocator
-plt.style.use('./style_config.mplstyle')
+plt.rcParams['figure.autolayout'] = True
 
 # График линейной зависимости по канонам ВТЭК
 def vtek_linear_ploting(xmin, xmax, ymin, ymax, 
@@ -45,3 +45,4 @@ def vtek_linear_ploting(xmin, xmax, ymin, ymax,
 
     fig.savefig(imagename, dpi=300)
     fig.show()
+    
