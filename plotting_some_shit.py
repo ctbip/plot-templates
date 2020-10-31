@@ -6,13 +6,15 @@ import numpy as np
 # График линейной зависимости по канонам ВТЭК
 def vtek_linear_ploting(xmin, xmax, ymin, ymax, 
                         title, xlabel, ylabel, 
-                        xdata, ydata, imagename):
+                        xdata, ydata, xerr = None, yerr = None, 
+                        imagename='imagename'):
     """
     xmin, xmax, ymin, ymax: Диапозоны графика
     title, xlabel, ylabel: Заголовок и подписи осей
     xdata, ydata: Экспериментальные точки
     linedata: Данные линейной аппроксимации
     imagename: Название сохраняемой картинки
+    xyerr, yerr: Погрешности по x и y (по умолчаню отсутствуют)
     """
 
     fig = plt.figure(figsize=[6.5,4.25], dpi=100)
@@ -38,15 +40,15 @@ def vtek_linear_ploting(xmin, xmax, ymin, ymax,
                 pad=15)
     ax.set_xlabel(xlabel, fontdict={'fontsize': 10}, labelpad=0)
     ax.set_ylabel(ylabel, fontdict={'fontsize': 10}, labelpad=5)
-    ax.plot(xdata, ydata, 'ks', ms=7, label='Эксперимент')
+    ax.errorbar(xdata, ydata, xerr=xerr, yerr=yerr, fmt='ks', capsize=3, ms=6, label='Эксперимент')
     
     lstsq = np.linalg.lstsq(np.dstack((xdata, np.ones(len(xdata))))[0], ydata)[0].tolist()
     a = lstsq[0]
     b = lstsq[1]
     linedata = np.array(xdata)*a + b
     print(f'МНК: y={a}*x + {b}')
-    line_label = rf'МНК: $y={np.round(a, 3)}*x+({np.round(b, 3)})$'
-    ax.plot(xdata, linedata, '-b', lw=2.5, label=line_label)
+    label_string = rf'МНК: $y={np.round(a, 3)}*x+({np.round(b, 3)})$'
+    ax.plot(xdata, linedata, '-b', lw=2.5, label=label_string)
     
     ax.legend(loc='upper left')
 
