@@ -44,7 +44,9 @@ def vtek_linear_ploting(xmin, xmax, ymin, ymax,
     a = lstsq[0]
     b = lstsq[1]
     linedata = np.array(xdata)*a + b
-    ax.plot(xdata, linedata, '-b', lw=2.5, label='МНК')
+    print(f'МНК: y={a}*x + {b}')
+    line_label = rf'МНК: $y={np.round(a, 3)}*x+({np.round(b, 3)})$'
+    ax.plot(xdata, linedata, '-b', lw=2.5, label=line_label)
     
     ax.legend(loc='upper left')
 
