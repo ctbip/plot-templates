@@ -42,7 +42,7 @@ def vtek_linear_ploting(xmin, xmax, ymin, ymax,
     ax.set_ylabel(ylabel, fontdict={'fontsize': 10}, labelpad=5)
     ax.errorbar(xdata, ydata, xerr=xerr, yerr=yerr, fmt='ks', capsize=3, ms=6, label='Эксперимент')
     
-    lstsq = np.linalg.lstsq(np.dstack((xdata, np.ones(len(xdata))))[0], ydata)[0].tolist()
+    lstsq = np.linalg.lstsq(np.dstack((xdata, np.ones(len(xdata))))[0], ydata, rcond=None)[0].tolist()
     a = lstsq[0]
     b = lstsq[1]
     linedata = np.array(xdata)*a + b
